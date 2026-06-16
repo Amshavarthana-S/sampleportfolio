@@ -1,16 +1,56 @@
-# React + Vite
+# 🌐 Amshavarthana's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal portfolio website built with React + Vite, showcasing my ML/Data Science projects, Medium articles, and skills.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [sampleportfolio.amshavarthana-s.workers.dev](https://sampleportfolio.amshavarthana-s.workers.dev/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Typewriter animation in Hero section
+- Dark / Light mode toggle
+- Smooth scroll navigation
+- Project cards with hover effects
+- Contact form powered by Web3Forms
+- Fully responsive (mobile-first)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- React + Vite
+- Tailwind CSS
+- Framer Motion
+- Web3Forms (contact form)
+- Lucide React (icons)
+
+---
+
+## 📂 Sections
+
+- **Hero** — Introduction with animated typewriter title
+- **About** — Bio, stats, skills, and CV download
+- **Projects** — ML & Data Science project cards with GitHub links
+- **Articles** — Beginner-friendly AI/ML articles on Medium
+- **Skills** — Core technical skills
+- **Contact** — Contact form with Web3Forms
+
+---
+
+## 🚀 Run Locally
+
+```bash
+# Clone the repo
+git clone https://github.com/Amshavarthana-S/sampleportfolio.git
+
+# Go into the folder
+cd sampleportfolio
+
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+```
+
