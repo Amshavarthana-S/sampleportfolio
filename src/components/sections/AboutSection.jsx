@@ -25,7 +25,7 @@ const AboutSection = () => {
 
   const details = [
     { label: "University", value: "University of Kelaniya" },
-    { label: "Degree", value: "BSc Software Engineering" },
+    { label: "Degree", value: "B.Sc.(Hons) in Software Engineering" },
     { label: "Focus", value: "ML & Data Science" },
     { label: "Email", value: personalInfo.email },
     { label: "Phone", value: personalInfo.phone },
@@ -101,7 +101,7 @@ const AboutSection = () => {
                 ))}
               </div>
 
-              {/* CV button — place your CV as /public/Amshavarthana_CV.pdf */}
+              
               <a
                 href="/Amshavarthana_CV.pdf"
                 download="Amshavarthana_CV.pdf"

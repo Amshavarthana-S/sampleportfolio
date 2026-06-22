@@ -43,12 +43,13 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+
           {/* Logo */}
           <Link
             to="/"
-            className="text-xl font-bold text-gray-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+            className="text-xl font-bold text-gray-900 dark:text-white hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
           >
-             TD
+            Amsha
           </Link>
 
           {/* Desktop Navigation */}
@@ -62,13 +63,13 @@ const Navigation = () => {
                   clickedButton === link.path ? 'scale-95' : 'scale-100'
                 } ${
                   location.pathname === link.path
-                    ? 'text-cyan-600 dark:text-cyan-400'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400'
+                    ? 'text-violet-600 dark:text-violet-400'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400'
                 }`}
               >
                 {link.name}
                 <span
-                  className={`absolute -bottom-1 left-0 h-0.5 bg-cyan-600 dark:bg-cyan-400 transition-all ${
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-violet-600 dark:bg-violet-400 transition-all ${
                     location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
                 />
@@ -113,7 +114,10 @@ const Navigation = () => {
               )}
             </button>
             <button
-              onClick={() => handleButtonClick('menu')}
+              onClick={() => {
+                handleButtonClick('menu');
+                setIsMobileMenuOpen(!isMobileMenuOpen);
+              }}
               className={`p-2 rounded-lg bg-gray-200 dark:bg-gray-800 transition-all ${
                 clickedButton === 'menu' ? 'scale-95' : 'scale-100'
               }`}
@@ -126,13 +130,7 @@ const Navigation = () => {
               )}
             </button>
           </div>
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-gray-900 dark:text-white" />
-              ) : (
-                <Menu className="w-6 h-6 text-gray-900 dark:text-white" />
-              )}
-            </button>
-          </div>
+
         </div>
       </div>
 
@@ -152,7 +150,7 @@ const Navigation = () => {
                   clickedButton === `mobile-${link.path}` ? 'scale-95' : 'scale-100'
                 } ${
                   location.pathname === link.path
-                    ? 'bg-cyan-50 dark:bg-cyan-900/20 text-cyan-600 dark:text-cyan-400'
+                    ? 'bg-violet-50 dark:bg-violet-900/20 text-violet-600 dark:text-violet-400'
                     : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}
               >
