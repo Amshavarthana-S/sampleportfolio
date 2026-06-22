@@ -38,10 +38,10 @@ const Footer = () => {
           {/* Socials */}
           <div className="flex items-center gap-3">
             {[
-              { Icon: Github, url: 'https://github.com/amshavarthana', label: 'GitHub' },
-              { Icon: Linkedin, url: 'https://linkedin.com/in/amshavarthana', label: 'LinkedIn' },
-              { Icon: BookOpen, url: 'https://medium.com/@amshavarthana', label: 'Medium' },
-              { Icon: Mail, url: 'mailto:amshavarthana@gmail.com', label: 'Email' }
+              { Icon: Github, url: 'https://github.com/Amshavarthana-S', label: 'GitHub' },
+              { Icon: Linkedin, url: 'https://www.linkedin.com/in/amshavarthana-sreesivanathasarma/', label: 'LinkedIn' },
+              { Icon: BookOpen, url: 'https://medium.com/@amsha09sarma11', label: 'Medium' },
+              { Icon: Mail, url: 'mailto:amshasarma@gmail.com', label: 'Email' }
             ].map(({ Icon, url, label }, i) => (
               <a
                 key={i}
