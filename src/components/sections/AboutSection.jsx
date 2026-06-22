@@ -87,7 +87,7 @@ const AboutSection = () => {
 
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">{personalInfo.name}</h3>
               <p className="text-violet-600 dark:text-violet-400 font-medium text-sm mb-1">
-                Aspiring ML Engineer & Tech Writer
+              Aspiring Data Scientist & ML Engineer
               </p>
               <p className="text-gray-400 dark:text-gray-500 text-xs mb-8">{personalInfo.university}</p>
 
