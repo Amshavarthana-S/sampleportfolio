@@ -49,17 +49,21 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen py-20 bg-gradient-to-br from-gray-50 via-white to-violet-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-900"
+      className="min-h-screen py-20 bg-background relative overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-block px-6 py-1.5 rounded-full border border-violet-200 bg-violet-50 dark:bg-violet-900/30 dark:border-violet-800 text-violet-600 dark:text-violet-400 text-xs font-bold tracking-wider uppercase mb-6">
+          <div className="inline-block px-6 py-1.5 rounded-full glass border-violet-500/20 text-violet-600 dark:text-violet-400 text-xs font-bold tracking-wider uppercase mb-6 shadow-sm">
             Get In Touch
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
-            Let's Connect
+          <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4">
+            Let's <span className="text-gradient">Connect</span>
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Open to internship opportunities, collaborations, and conversations about ML & AI.
           </p>
         </div>
@@ -72,19 +76,19 @@ const ContactSection = () => {
               { Icon: Phone, title: 'Phone', value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
               { Icon: MapPin, title: 'Location', value: personalInfo.location, href: null }
             ].map(({ Icon, title, value, href }, i) => (
-              <div key={i} className="group p-6 rounded-xl bg-white dark:bg-gray-900 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-gray-800">
+              <div key={i} className="group p-6 rounded-2xl glass-panel border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl hover:shadow-violet-500/10 transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-lg bg-violet-50 dark:bg-violet-900/30 group-hover:bg-violet-100 dark:group-hover:bg-violet-900/50 transition-colors flex-shrink-0">
-                    <Icon className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                  <div className="p-3 rounded-xl bg-violet-500/10 group-hover:bg-violet-600 transition-colors flex-shrink-0 group-hover:text-white text-violet-600 dark:text-violet-400">
+                    <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-0.5">{title}</h3>
+                    <h3 className="text-sm font-semibold text-foreground mb-0.5">{title}</h3>
                     {href ? (
-                      <a href={href} className="text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors text-sm">
+                      <a href={href} className="text-muted-foreground hover:text-violet-600 dark:hover:text-violet-400 transition-colors text-sm">
                         {value}
                       </a>
                     ) : (
-                      <p className="text-gray-600 dark:text-gray-400 text-sm">{value}</p>
+                      <p className="text-muted-foreground text-sm">{value}</p>
                     )}
                   </div>
                 </div>
@@ -92,9 +96,9 @@ const ContactSection = () => {
             ))}
 
             {/* Socials */}
-            <div className="p-6 rounded-xl bg-white dark:bg-gray-900 shadow-sm border border-gray-200 dark:border-gray-800">
-              <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Find Me Online</h3>
-              <div className="flex gap-3">
+            <div className="p-6 rounded-2xl glass-panel border border-white/20 dark:border-white/10 shadow-lg">
+              <h3 className="text-sm font-semibold text-foreground mb-4 text-center">Find Me Online</h3>
+              <div className="flex justify-center gap-4">
                 {[
                   { Icon: Github, url: personalInfo.social.github, label: 'GitHub' },
                   { Icon: Linkedin, url: personalInfo.social.linkedin, label: 'LinkedIn' },
@@ -106,9 +110,9 @@ const ContactSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="p-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-violet-50 dark:hover:bg-violet-900/30 transition-all hover:scale-110 group"
+                    className="p-3 rounded-xl glass hover:bg-violet-500/10 hover:border-violet-500/30 transition-all hover:scale-110 group shadow-sm text-muted-foreground hover:text-foreground"
                   >
-                    <Icon className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:text-violet-600 dark:group-hover:text-violet-400" />
+                    <Icon className="w-5 h-5 group-hover:text-violet-600 dark:group-hover:text-violet-400" />
                   </a>
                 ))}
               </div>
@@ -119,9 +123,10 @@ const ContactSection = () => {
           <div className="lg:col-span-2">
             <form
               onSubmit={handleSubmit}
-              className="p-8 rounded-2xl bg-white dark:bg-gray-900 shadow-xl border border-gray-200 dark:border-gray-800"
+              className="p-8 md:p-10 rounded-[2.5rem] glass-panel shadow-2xl border border-white/20 dark:border-white/10 relative"
             >
-              <div className="space-y-5">
+              <div className="absolute inset-0 bg-white/5 dark:bg-black/10 rounded-[2.5rem] pointer-events-none" />
+              <div className="relative space-y-6">
                 {/* Name */}
                 <div className="relative">
                   <input
@@ -131,9 +136,9 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     placeholder="Your Name"
-                    className="peer w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all text-gray-900 dark:text-white placeholder-transparent"
+                    className="peer w-full px-5 py-4 bg-background/50 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-all text-foreground placeholder-transparent backdrop-blur-sm"
                   />
-                  <label className="absolute left-4 -top-2.5 bg-white dark:bg-gray-900 px-2 text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-violet-600 dark:peer-focus:text-violet-400">
+                  <label className="absolute left-5 -top-3 bg-background/80 backdrop-blur-md px-2 text-sm text-muted-foreground transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-placeholder-shown:text-muted-foreground peer-focus:-top-3 peer-focus:text-sm peer-focus:text-violet-600 dark:peer-focus:text-violet-400 rounded">
                     Your Name
                   </label>
                 </div>
@@ -147,9 +152,9 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     placeholder="Your Email"
-                    className="peer w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all text-gray-900 dark:text-white placeholder-transparent"
+                    className="peer w-full px-5 py-4 bg-background/50 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-all text-foreground placeholder-transparent backdrop-blur-sm"
                   />
-                  <label className="absolute left-4 -top-2.5 bg-white dark:bg-gray-900 px-2 text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-violet-600 dark:peer-focus:text-violet-400">
+                  <label className="absolute left-5 -top-3 bg-background/80 backdrop-blur-md px-2 text-sm text-muted-foreground transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-placeholder-shown:text-muted-foreground peer-focus:-top-3 peer-focus:text-sm peer-focus:text-violet-600 dark:peer-focus:text-violet-400 rounded">
                     Your Email
                   </label>
                 </div>
@@ -163,22 +168,22 @@ const ContactSection = () => {
                     required
                     rows={6}
                     placeholder="Your Message"
-                    className="peer w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all text-gray-900 dark:text-white placeholder-transparent resize-none"
+                    className="peer w-full px-5 py-4 bg-background/50 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-all text-foreground placeholder-transparent resize-none backdrop-blur-sm"
                   />
-                  <label className="absolute left-4 -top-2.5 bg-white dark:bg-gray-900 px-2 text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-violet-600 dark:peer-focus:text-violet-400">
+                  <label className="absolute left-5 -top-3 bg-background/80 backdrop-blur-md px-2 text-sm text-muted-foreground transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-placeholder-shown:text-muted-foreground peer-focus:-top-3 peer-focus:text-sm peer-focus:text-violet-600 dark:peer-focus:text-violet-400 rounded">
                     Your Message
                   </label>
                 </div>
 
                 {/* Status */}
                 {submitStatus === 'success' && (
-                  <div className="flex items-center gap-3 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-400">
+                  <div className="flex items-center gap-3 p-4 rounded-xl glass border-emerald-500/30 text-emerald-600 dark:text-emerald-400">
                     <CheckCircle className="w-5 h-5 flex-shrink-0" />
                     <p className="text-sm font-medium">Message sent! I'll get back to you soon.</p>
                   </div>
                 )}
                 {submitStatus === 'error' && (
-                  <div className="flex items-center gap-3 p-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400">
+                  <div className="flex items-center gap-3 p-4 rounded-xl glass border-red-500/30 text-red-600 dark:text-red-400">
                     <XCircle className="w-5 h-5 flex-shrink-0" />
                     <p className="text-sm font-medium">Something went wrong. Please email me directly at {personalInfo.email}</p>
                   </div>
@@ -188,7 +193,7 @@ const ContactSection = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-8 py-4 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-lg transition-all hover:scale-[1.01] hover:shadow-xl hover:shadow-violet-500/30 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full px-8 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] hover:shadow-xl hover:shadow-violet-500/30 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 ring-1 ring-white/20"
                 >
                   {isSubmitting ? (
                     <>
@@ -201,8 +206,6 @@ const ContactSection = () => {
                     </>
                   )}
                 </button>
-
-               
               </div>
             </form>
           </div>

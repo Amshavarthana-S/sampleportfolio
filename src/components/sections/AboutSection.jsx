@@ -49,27 +49,31 @@ const AboutSection = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="min-h-screen py-20 bg-[#f8faff] dark:bg-gray-900 font-sans"
+      className="min-h-screen py-20 bg-background font-sans relative overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Decorative background elements */}
+      <div className="absolute top-40 left-0 w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-40 right-0 w-[400px] h-[400px] bg-cyan-600/10 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-block px-6 py-1.5 rounded-full border border-violet-200 bg-violet-50 dark:bg-violet-900/30 dark:border-violet-800 text-violet-600 dark:text-violet-400 text-xs font-bold tracking-wider uppercase mb-6 shadow-sm">
+          <div className="inline-block px-6 py-1.5 rounded-full glass border-violet-500/20 text-violet-600 dark:text-violet-400 text-xs font-bold tracking-wider uppercase mb-6 shadow-sm">
             About Me
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-            Data-Driven by Nature, <span className="text-violet-600 dark:text-violet-400">Curious by Instinct</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-foreground tracking-tight">
+            Data-Driven by Nature, <span className="text-gradient">Curious by Instinct</span>
           </h2>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
           {/* Left: Profile Card */}
-          <div className={`lg:col-span-5 bg-white dark:bg-gray-800 rounded-[2rem] p-8 border border-gray-100 dark:border-gray-700 shadow-sm transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
+          <div className={`lg:col-span-5 glass-panel rounded-[2rem] p-8 border border-white/20 dark:border-white/10 shadow-xl transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
             <div className="flex flex-col items-center text-center">
 
               {/* Real profile photo */}
-              <div className="w-48 h-48 rounded-full mb-6 ring-4 ring-violet-200 dark:ring-violet-700 overflow-hidden shadow-xl shadow-violet-500/10">
+              <div className="w-48 h-48 rounded-full mb-6 ring-4 ring-violet-500/30 overflow-hidden shadow-2xl shadow-violet-500/20">
                 <img
                   src={personalInfo.photo}
                   alt={personalInfo.fullName}
@@ -85,29 +89,28 @@ const AboutSection = () => {
                 />
               </div>
 
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">{personalInfo.name}</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-1">{personalInfo.name}</h3>
               <p className="text-violet-600 dark:text-violet-400 font-medium text-sm mb-1">
               Aspiring Data Scientist & ML Engineer
               </p>
-              <p className="text-gray-400 dark:text-gray-500 text-xs mb-8">{personalInfo.university}</p>
+              <p className="text-muted-foreground text-xs mb-8">{personalInfo.university}</p>
 
               {/* Stats */}
               <div className="grid grid-cols-2 gap-4 w-full mb-8">
                 {stats.map((stat, i) => (
-                  <div key={i} className="flex flex-col items-center justify-center p-4 rounded-2xl border border-gray-100 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/50">
-                    <span className="text-xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</span>
-                    <span className="text-xs text-gray-500 dark:text-gray-400">{stat.label}</span>
+                  <div key={i} className="flex flex-col items-center justify-center p-4 rounded-2xl glass border border-white/10">
+                    <span className="text-xl font-bold text-foreground mb-1">{stat.value}</span>
+                    <span className="text-xs text-muted-foreground">{stat.label}</span>
                   </div>
                 ))}
               </div>
 
-              
               <a
                 href="/Amshavarthana_CV.pdf"
                 download="Amshavarthana_CV.pdf"
-                className="w-4/5 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-violet-600 hover:bg-violet-700 text-white font-semibold rounded-full transition-colors mb-8 shadow-md shadow-violet-500/20 text-sm"
+                className="w-4/5 inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold rounded-full transition-all hover:scale-105 active:scale-95 mb-8 shadow-xl shadow-violet-500/20 text-sm ring-1 ring-white/20"
               >
-                <Download className="w-3.5 h-3.5" /> Download CV
+                <Download className="w-4 h-4" /> Download CV
               </a>
 
               {/* Socials */}
@@ -119,7 +122,7 @@ const AboutSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-violet-50 hover:text-violet-600 dark:hover:bg-gray-600 transition-colors"
+                    className="w-10 h-10 flex items-center justify-center rounded-full glass text-muted-foreground hover:text-foreground hover:border-violet-500/50 hover:scale-110 transition-all shadow-md"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -132,25 +135,25 @@ const AboutSection = () => {
           <div className={`lg:col-span-7 flex flex-col justify-center pt-4 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
 
             <div className="prose prose-gray dark:prose-invert max-w-none mb-8">
-              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-5">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                 I'm a 3rd-year Software Engineering undergraduate at the University of Kelaniya, passionate about applying machine learning to real-world problems. My focus areas are predictive modelling, AI-powered applications, and making sense of messy datasets.
               </p>
-              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-5">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                 I've built an AI student companion for Sri Lankan students (EduMind AI), a voice assistant powered by Whisper and deep learning, and several end-to-end ML pipelines. I also write beginner-friendly AI/ML articles on Medium to share what I learn.
               </p>
-              <p className="text-gray-500 dark:text-gray-400 text-sm italic font-medium">
+              <p className="text-muted-foreground text-sm italic font-medium border-l-2 border-violet-500 pl-4">
                 "The goal is to turn data into information, and information into insight."
               </p>
             </div>
 
             {/* Skills grid */}
-            <div className="mb-8">
-              <p className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-4">Core Skills</p>
+            <div className="mb-10">
+              <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">Core Skills</p>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1.5 text-xs font-semibold bg-violet-50 dark:bg-violet-900/20 text-violet-700 dark:text-violet-300 border border-violet-100 dark:border-violet-800 rounded-lg"
+                    className="px-3 py-1.5 text-[11px] font-semibold glass text-foreground border border-violet-500/20 rounded-md shadow-sm"
                   >
                     {skill}
                   </span>
@@ -163,10 +166,10 @@ const AboutSection = () => {
               {details.map((item, i) => (
                 <div
                   key={i}
-                  className="p-5 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-violet-300 dark:hover:border-violet-500 transition-colors"
+                  className="p-5 rounded-2xl glass-panel border border-white/10 hover:border-violet-500/50 transition-colors group"
                 >
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-1.5">{item.label}</p>
-                  <p className="text-sm font-medium text-gray-900 dark:text-white">{item.value}</p>
+                  <p className="text-xs text-muted-foreground mb-1.5 group-hover:text-violet-400 transition-colors">{item.label}</p>
+                  <p className="text-sm font-semibold text-foreground">{item.value}</p>
                 </div>
               ))}
             </div>

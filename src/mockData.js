@@ -140,10 +140,10 @@ export const skills = [
     category: "Machine Learning",
     items: [
       { name: "scikit-learn", level: 85 },
+      { name: "XGBoost", level: 82 },
       { name: "MLP Neural Network", level: 78 },
       { name: "Decision Trees / Random Forest", level: 85 },
-      { name: "SVM & KNN", level: 78 },
-      { name: "K-Means Clustering", level: 75 }
+      { name: "Feature Engineering", level: 80 }
     ]
   },
   {
@@ -153,7 +153,7 @@ export const skills = [
       { name: "Pandas & NumPy", level: 88 },
       { name: "Matplotlib / Seaborn / Plotly", level: 82 },
       { name: "Power BI", level: 75 },
-      { name: "SQLite / MySQL", level: 78 }
+      { name: "SQL (MySQL, SQLite)", level: 80 }
     ]
   },
   {
@@ -161,9 +161,29 @@ export const skills = [
     items: [
       { name: "Groq LLaMA 3.3 70B", level: 80 },
       { name: "OpenAI Whisper", level: 78 },
-      { name: "Streamlit", level: 85 },
-      { name: "Flask", level: 80 },
+      { name: "Tavily API", level: 75 },
+      { name: "Streamlit / Flask", level: 85 },
       { name: "TF-IDF / NLP", level: 75 }
+    ]
+  },
+  {
+    category: "Software Engineering",
+    items: [
+      { name: "Java & Spring Boot", level: 75 },
+      { name: "JavaScript", level: 80 },
+      { name: "HTML / CSS", level: 85 },
+      { name: "Git / GitHub", level: 88 },
+      { name: "REST APIs", level: 82 }
+    ]
+  },
+  {
+    category: "Tools & Platforms",
+    items: [
+      { name: "VS Code", level: 90 },
+      { name: "Jupyter Notebook", level: 85 },
+      { name: "Postman", level: 85 },
+      { name: "Figma", level: 80 },
+      { name: "Excel", level: 80 }
     ]
   }
 ];

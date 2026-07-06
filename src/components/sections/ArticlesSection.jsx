@@ -31,17 +31,20 @@ const ArticlesSection = () => {
   }, []);
 
   return (
-    <section id="articles" className="min-h-screen py-24 bg-white dark:bg-gray-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="articles" className="min-h-screen py-24 bg-background relative overflow-hidden">
+      {/* Decorative Blur */}
+      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-cyan-600/10 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         <div className="text-center mb-16">
-          <div className="inline-block px-6 py-1.5 rounded-full border border-violet-200 bg-violet-50 dark:bg-violet-900/30 dark:border-violet-800 text-violet-600 dark:text-violet-400 text-xs font-bold tracking-wider uppercase mb-6">
+          <div className="inline-block px-6 py-1.5 rounded-full glass border-violet-500/20 text-violet-600 dark:text-violet-400 text-xs font-bold tracking-wider uppercase mb-6 shadow-sm">
             On Medium
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4">
-            AI/ML <span className="text-violet-600 dark:text-violet-400">Articles</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight mb-4">
+            AI/ML <span className="text-gradient">Articles</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             Beginner-friendly deep dives into machine learning concepts, tools, and trends.
           </p>
         </div>
@@ -52,32 +55,32 @@ const ArticlesSection = () => {
               key={article.id}
               ref={(el) => (itemRefs.current[index] = el)}
               data-index={index}
-              className={`group bg-white dark:bg-gray-900 rounded-[2rem] border border-gray-100 dark:border-gray-800 p-8 flex flex-col shadow-sm hover:shadow-xl hover:shadow-violet-100/50 dark:hover:shadow-violet-900/20 hover:-translate-y-1 transition-all duration-500 ${
+              className={`group glass-panel rounded-[2rem] border border-white/20 dark:border-white/10 p-8 flex flex-col shadow-lg hover:shadow-2xl hover:shadow-violet-500/20 hover:-translate-y-2 transition-all duration-500 ${
                 visibleItems.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 80}ms` }}
             >
               {/* Top row: tag + read time */}
               <div className="flex items-center justify-between mb-6">
-                <span className={`text-[11px] font-bold px-3 py-1 rounded-full border ${tagColors[article.tag] || 'bg-gray-50 text-gray-600 border-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700'}`}>
+                <span className={`text-[11px] font-bold px-3 py-1 rounded-full border shadow-sm ${tagColors[article.tag] || 'glass text-muted-foreground border-white/10'}`}>
                   {article.tag}
                 </span>
-                <span className="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500">
+                <span className="flex items-center gap-1 text-xs text-muted-foreground font-medium">
                   <Clock className="w-3 h-3" />
                   {article.readTime}
                 </span>
               </div>
 
               {/* Icon */}
-              <div className="w-12 h-12 rounded-2xl bg-violet-50 dark:bg-violet-900/20 flex items-center justify-center mb-5 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 text-violet-600">
+              <div className="w-12 h-12 rounded-2xl bg-violet-500/10 flex items-center justify-center mb-5 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 text-violet-600 dark:text-violet-400 shadow-sm">
                 <BookOpen className="w-5 h-5" />
               </div>
 
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 leading-snug group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+              <h3 className="text-lg font-bold text-foreground mb-3 leading-snug group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                 {article.title}
               </h3>
 
-              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed flex-grow mb-6">
+              <p className="text-muted-foreground text-sm leading-relaxed flex-grow mb-6">
                 {article.description}
               </p>
 
@@ -94,14 +97,14 @@ const ArticlesSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-20">
           <a
             href="https://medium.com/@amshavarthana"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-full hover:scale-[1.02] transition-transform shadow-xl"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-foreground text-background font-bold rounded-full hover:scale-[1.03] transition-transform shadow-xl shadow-foreground/10"
           >
-            <BookOpen className="w-4 h-4" />
+            <BookOpen className="w-5 h-5" />
             View All Articles on Medium
           </a>
         </div>

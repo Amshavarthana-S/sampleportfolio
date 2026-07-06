@@ -10,25 +10,25 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-gray-400 py-12 px-6">
+    <footer className="bg-background border-t border-border/50 text-muted-foreground py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           
           {/* Brand */}
           <div className="text-center md:text-left">
-            <span className="text-2xl font-black text-white tracking-tight italic">
-              Amsha<span className="text-violet-400 not-italic">.</span>
+            <span className="text-2xl font-black text-foreground tracking-tight italic">
+              Amsha<span className="text-violet-500 not-italic">.</span>
             </span>
-            <p className="text-sm text-gray-500 mt-1">ML Student & Tech Writer</p>
+            <p className="text-sm mt-1">ML Student & Tech Writer</p>
           </div>
 
           {/* Nav links */}
-          <div className="flex items-center gap-6 text-sm">
+          <div className="flex flex-wrap justify-center items-center gap-6 text-sm">
             {['home', 'about', 'projects', 'articles', 'skills', 'contact'].map((id) => (
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
-                className="capitalize hover:text-violet-400 transition-colors"
+                className="capitalize hover:text-violet-500 transition-colors font-medium"
               >
                 {id}
               </button>
@@ -49,15 +49,13 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="p-2.5 rounded-xl bg-gray-800 hover:bg-violet-600 text-gray-400 hover:text-white transition-all duration-300"
+                className="p-2.5 rounded-xl glass hover:bg-violet-500/10 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 text-muted-foreground shadow-sm"
               >
                 <Icon className="w-4 h-4" />
               </a>
             ))}
           </div>
         </div>
-
-       
       </div>
     </footer>
   );

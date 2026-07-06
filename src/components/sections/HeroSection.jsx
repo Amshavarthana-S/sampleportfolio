@@ -53,58 +53,59 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50 dark:bg-slate-900 px-6 text-center pt-16 sm:pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background px-6 text-center pt-16 sm:pt-20">
+      
+      {/* Dynamic Animated Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-cyan-500/10 dark:from-violet-900/20 dark:via-background dark:to-cyan-900/20 animate-pulse duration-[10000ms]" />
       
       {/* Subtle background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:60px_60px] dark:bg-[linear-gradient(rgba(99,102,241,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.06)_1px,transparent_1px)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.05)_1px,transparent_1px)] bg-[size:40px_40px] dark:bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_20%,transparent_100%)]" />
 
       <div className="relative z-10 w-full max-w-5xl flex flex-col items-center justify-center">
         
-        {/* Status badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-600 dark:text-violet-400 text-xs font-bold mt-8 mb-8">
-          <span className="relative flex h-2 w-2">
+        {/* Status badge - Glassmorphic */}
+        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full glass border-violet-500/30 text-violet-700 dark:text-violet-300 text-xs font-semibold mt-8 mb-10 shadow-lg shadow-violet-500/10 backdrop-blur-xl">
+          <span className="relative flex h-2.5 w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-violet-500"></span>
           </span>
           Available for Internship · 2026
         </div>
 
-       
-
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-4 leading-tight">
-          <span className="block text-slate-900 dark:text-white leading-none">Hi, I'm</span>
-          <span className="bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent italic">
+        <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black tracking-tighter mb-6 leading-[1.1]">
+          <span className="block text-foreground leading-none mb-2">Hi, I'm</span>
+          <span className="text-gradient italic drop-shadow-xl">
             {personalInfo.name}
           </span>
         </h1>
 
         {/* Typewriter title */}
         <div className="min-h-[4rem] sm:min-h-[5rem] flex items-center justify-center">
-          <h2 className="text-2xl sm:text-4xl font-bold text-slate-700 dark:text-slate-300 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-muted-foreground text-center tracking-tight">
             {displayedTitle}
-            <span className="inline-block w-[3px] h-8 sm:h-10 bg-violet-600 dark:bg-violet-400 ml-2 animate-pulse rounded-full" />
+            <span className="inline-block w-[3px] h-6 sm:h-8 lg:h-10 bg-violet-500 ml-2 animate-pulse rounded-full align-middle" />
           </h2>
         </div>
 
-        <p className="max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-10 min-h-[3rem]">
+        <p className="max-w-2xl mx-auto text-lg sm:text-xl text-muted-foreground leading-relaxed mb-12 min-h-[3rem] font-medium">
           {displayedTagline}
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col items-center justify-center gap-4 mb-16 sm:flex-row sm:flex-wrap sm:gap-5">
+        <div className="flex flex-col items-center justify-center gap-6 mb-20 sm:flex-row sm:flex-wrap sm:gap-6">
           <button
             onClick={() => scrollToSection('projects')}
-            className="px-8 py-4 bg-violet-600 hover:bg-violet-700 text-white font-bold rounded-full transition-all hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-violet-500/20"
+            className="px-8 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold rounded-full transition-all hover:scale-[1.05] active:scale-[0.95] shadow-xl shadow-violet-500/25 ring-1 ring-white/20"
           >
             View My Projects
           </button>
 
-          <div className="flex items-center justify-center gap-3">
+          <div className="flex items-center justify-center gap-4">
             {[
-              { icon: <Github size={22} />, link: personalInfo.social.github, label: 'GitHub' },
-              { icon: <Linkedin size={22} />, link: personalInfo.social.linkedin, label: 'LinkedIn' },
-              { icon: <BookOpen size={22} />, link: personalInfo.social.medium, label: 'Medium' },
-              { icon: <Mail size={22} />, link: personalInfo.social.email, label: 'Email' }
+              { icon: <Github size={20} />, link: personalInfo.social.github, label: 'GitHub' },
+              { icon: <Linkedin size={20} />, link: personalInfo.social.linkedin, label: 'LinkedIn' },
+              { icon: <BookOpen size={20} />, link: personalInfo.social.medium, label: 'Medium' },
+              { icon: <Mail size={20} />, link: personalInfo.social.email, label: 'Email' }
             ].map((s, i) => (
               <a
                 key={i}
@@ -112,7 +113,7 @@ const HeroSection = () => {
                 aria-label={s.label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md hover:text-violet-600 dark:hover:text-violet-400 hover:border-violet-500/50 transition-all duration-300"
+                className="p-4 rounded-full glass hover:bg-white/20 dark:hover:bg-white/10 text-muted-foreground hover:text-foreground border-white/20 hover:border-violet-500/50 transition-all duration-300 hover:scale-110 shadow-lg"
               >
                 {s.icon}
               </a>
@@ -120,8 +121,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Tech stack row */}
-        <div className="flex flex-wrap justify-center gap-8 sm:gap-12 py-6 px-10 rounded-3xl bg-slate-200/30 dark:bg-slate-800/20 backdrop-blur-sm">
+        {/* Tech stack row - Glassmorphic */}
+        <div className="flex flex-wrap justify-center gap-8 sm:gap-12 py-6 px-10 rounded-[2rem] glass-panel border-white/10">
           {[
             { Icon: SiPython, color: "hover:text-[#3776AB]", label: "Python" },
             { Icon: SiPandas, color: "hover:text-[#7B2FBE]", label: "Pandas" },
@@ -129,19 +130,23 @@ const HeroSection = () => {
             { Icon: SiScikitlearn, color: "hover:text-[#F7931E]", label: "scikit-learn" },
             { Icon: SiJupyter, color: "hover:text-[#F37626]", label: "Jupyter" }
           ].map((item, i) => (
-            <item.Icon
-              key={i}
-              size={30}
-              className={`text-slate-400 transition-all duration-500 hover:scale-125 opacity-50 hover:opacity-100 ${item.color}`}
-              title={item.label}
-            />
+            <div key={i} className="group relative">
+              <item.Icon
+                size={32}
+                className={`text-muted-foreground/60 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-1 ${item.color}`}
+              />
+              {/* Tooltip */}
+              <span className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-foreground text-background text-xs px-2 py-1 rounded font-medium whitespace-nowrap pointer-events-none">
+                {item.label}
+              </span>
+            </div>
           ))}
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <ArrowDown size={18} className="text-violet-500 animate-bounce" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity cursor-pointer" onClick={() => scrollToSection('about')}>
+        <ArrowDown size={24} className="text-violet-500 animate-bounce" />
       </div>
     </section>
   );
