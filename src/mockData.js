@@ -89,6 +89,55 @@ export const projects = [
     category: "data",
     github: "https://github.com/Amshavarthana-S/fuel-food-price-analysis",
     demo: "#"
+  },
+  {
+    id: 7,
+    title: "Movie Recommendation System",
+    description: "A comprehensive movie recommendation engine suggesting movies based on user preferences and content similarity, built with Python, Streamlit, and scikit-learn.",
+    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&h=600&fit=crop",
+    tags: ["Python", "Machine Learning", "Streamlit", "scikit-learn", "Pandas"],
+    badge: "ML + Web App",
+    category: "ml",
+    github: "https://github.com/Amshavarthana-S/movie-recommendation-app",
+    demo: "#"
+  },
+  {
+    id: 8,
+    title: "Password Strength Classifier using NLP",
+    description: "A machine learning model predicting password strength by combining character-level NLP feature extraction (TF-IDF) with hand-engineered structural features using Logistic Regression.",
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=600&fit=crop",
+    tags: ["Python", "scikit-learn", "NLP", "TF-IDF", "Logistic Regression"],
+    badge: "ML + NLP",
+    category: "ml",
+    github: "https://github.com/Amshavarthana-S/password-strength-nlp",
+    demo: "#"
+  }
+];
+
+export const certifications = [
+  {
+    id: 2,
+    title: "The Complete Python Masterclass",
+    issuer: "Udemy",
+    link: "https://www.udemy.com/certificate/UC-724f31db-9bdf-4bf9-aa9c-e205825f4f2e/"
+  },
+  {
+    id: 3,
+    title: "Statistics Foundations",
+    issuer: "LinkedIn Learning",
+    link: "https://www.linkedin.com/learning/certificates/b8a950afa8ebbbfa4693412cb5063ae26723cf4beda6b0244cc23261f05d682b"
+  },
+  {
+    id: 4,
+    title: "Data Analytics Course",
+    issuer: "LinkedIn Learning",
+    link: "https://www.linkedin.com/learning/certificates/0a42aad6a57c9b1bf92c354733cc77b4b6ce6f4ae7c50faa8b27188f4ffea37c"
+  },
+  {
+    id: 5,
+    title: "Machine Learning with Python",
+    issuer: "LinkedIn Learning",
+    link: "https://www.linkedin.com/learning/certificates/ba1b96d02def625d38017d3938e7a5941b8787493608de0582b7c8e7c47a725d?trk=share_certificate"
   }
 ];
 

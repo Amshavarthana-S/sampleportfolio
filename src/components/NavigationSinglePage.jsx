@@ -15,7 +15,7 @@ const NavigationSinglePage = () => {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       setScrollProgress((window.scrollY / totalHeight) * 100);
 
-      const sections = ['home', 'about', 'projects', 'articles', 'skills', 'contact'];
+      const sections = ['home', 'about', 'projects', 'articles', 'skills', 'certifications', 'contact'];
       const current = sections.find((section) => {
         const el = document.getElementById(section);
         if (!el) return false;
@@ -43,6 +43,7 @@ const NavigationSinglePage = () => {
     { name: 'Projects', id: 'projects' },
     { name: 'Articles', id: 'articles' },
     { name: 'Skills', id: 'skills' },
+    { name: 'Certifications', id: 'certifications' },
     { name: 'Contact', id: 'contact' }
   ];
 
