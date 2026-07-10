@@ -59,7 +59,7 @@ const ProjectsSection = () => {
             My <span className="text-gradient">Projects</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-            A collection of ML, AI, and Data Science projects built on real-world datasets.
+            A collection of Software Development, ML, AI, and Data Science projects built on real-world datasets.
           </p>
         </div>
 

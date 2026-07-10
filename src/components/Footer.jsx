@@ -19,7 +19,7 @@ const Footer = () => {
             <span className="text-2xl font-black text-foreground tracking-tight italic">
               Amsha<span className="text-violet-500 not-italic">.</span>
             </span>
-            <p className="text-sm mt-1">ML Student & Tech Writer</p>
+            <p className="text-sm mt-1">Aspiring Data Scientist & ML Engineer | Software Developer</p>
           </div>
 
           {/* Nav links */}

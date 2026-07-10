@@ -26,7 +26,7 @@ const AboutSection = () => {
   const details = [
     { label: "University", value: "University of Kelaniya" },
     { label: "Degree", value: "B.Sc.(Hons) in Software Engineering" },
-    { label: "Focus", value: "ML & Data Science" },
+    { label: "Focus", value: "Data Science, ML & Software Development" },
     { label: "Email", value: personalInfo.email },
     { label: "Phone", value: personalInfo.phone },
     { label: "Availability", value: "Seeking Internship · 2026" }
@@ -91,7 +91,7 @@ const AboutSection = () => {
 
               <h3 className="text-2xl font-bold text-foreground mb-1">{personalInfo.name}</h3>
               <p className="text-violet-600 dark:text-violet-400 font-medium text-sm mb-1">
-              Aspiring Data Scientist & ML Engineer
+              Aspiring Data Scientist & ML Engineer | Software Developer
               </p>
               <p className="text-muted-foreground text-xs mb-8">{personalInfo.university}</p>
 
@@ -106,8 +106,8 @@ const AboutSection = () => {
               </div>
 
               <a
-                href="/Amshavarthana_CV.pdf"
-                download="Amshavarthana_CV.pdf"
+                href="/Amshavarthana-DS-CV.pdf"
+                download="Amshavarthana-DS-CV.pdf"
                 className="w-4/5 inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold rounded-full transition-all hover:scale-105 active:scale-95 mb-8 shadow-xl shadow-violet-500/20 text-sm ring-1 ring-white/20"
               >
                 <Download className="w-4 h-4" /> Download CV
@@ -136,10 +136,10 @@ const AboutSection = () => {
 
             <div className="prose prose-gray dark:prose-invert max-w-none mb-8">
               <p className="text-muted-foreground text-sm leading-relaxed mb-5">
-                I'm a 3rd-year Software Engineering undergraduate at the University of Kelaniya, passionate about applying machine learning to real-world problems. My focus areas are predictive modelling, AI-powered applications, and making sense of messy datasets.
+                I'm a 3rd-year Software Engineering undergraduate at the University of Kelaniya, passionate about Software Development and applying machine learning to real-world problems. My focus areas are building robust software applications, predictive modelling, AI-powered systems, and making sense of messy datasets.
               </p>
               <p className="text-muted-foreground text-sm leading-relaxed mb-5">
-                I've built an AI student companion for Sri Lankan students (EduMind AI), a voice assistant powered by Whisper and deep learning, and several end-to-end ML pipelines. I also write beginner-friendly AI/ML articles on Medium to share what I learn.
+                I've built an AI student companion for Sri Lankan students (EduMind AI), a voice assistant powered by Whisper, and several end-to-end ML pipelines. Alongside my Data Science and ML projects, I actively develop full-stack software applications.
               </p>
               <p className="text-muted-foreground text-sm italic font-medium border-l-2 border-violet-500 pl-4">
                 "The goal is to turn data into information, and information into insight."

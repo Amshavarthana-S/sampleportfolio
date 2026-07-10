@@ -4,12 +4,10 @@ export const personalInfo = {
   name: "Amshavarthana",
   fullName: "Amshavarthana Sreesivanathasarma",
   title: [
-    "Aspiring ML Engineer",
-    "Data Science Student",
-    "Tech Writer on Medium"
+    "Aspiring Data Scientist & ML Engineer | Software Developer"
   ],
-  tagline: "Turning data into decisions — one model at a time.",
-  bio: "3rd-year Software Engineering undergraduate at the University of Kelaniya, passionate about Data Science and Machine Learning. I build predictive models, write beginner-friendly AI/ML articles on Medium, and am actively preparing for an ML/Data Science internship.",
+  tagline: "",
+  bio: "3rd-year Software Engineering undergraduate at the University of Kelaniya, passionate about Data Science, Machine Learning, and Software Development. I build predictive models, develop software applications, and am actively preparing for an internship in these fields.",
   email: "amshasarma@gmail.com",
   phone: "+94 755 710 942",
   location: "Colombo, Sri Lanka",
@@ -115,6 +113,12 @@ export const projects = [
 ];
 
 export const certifications = [
+  {
+    id: 1,
+    title: "Data Science Real World Projects in Python",
+    issuer: "Udemy",
+    link: "https://www.udemy.com/certificate/UC-16066913-4cd4-4f98-9a0b-7e20b48f5b84/"
+  },
   {
     id: 2,
     title: "The Complete Python Masterclass",
