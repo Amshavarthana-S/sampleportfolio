@@ -109,6 +109,17 @@ export const projects = [
     category: "ml",
     github: "https://github.com/Amshavarthana-S/password-strength-nlp",
     demo: "#"
+  },
+  {
+    id: 9,
+    title: "Emotion Detection API",
+    description: "AI-powered web application for detecting emotions from text using a Hugging Face (RoBERTa) model trained on the GoEmotions dataset. Features a React frontend and Node.js/Express backend.",
+    image: "/emotion-detection.png",
+    tags: ["React.js", "Node.js", "Express.js", "Hugging Face", "Python"],
+    badge: "AI + Fullstack",
+    category: "ml",
+    github: "https://github.com/Amshavarthana-S/emotion-detection-api",
+    demo: "https://invigorating-blessing-production-97ab.up.railway.app/"
   }
 ];
 
@@ -212,6 +223,7 @@ export const skills = [
   {
     category: "AI & Tools",
     items: [
+      { name: "Hugging Face (RoBERTa)", level: 80 },
       { name: "Groq LLaMA 3.3 70B", level: 80 },
       { name: "OpenAI Whisper", level: 78 },
       { name: "Tavily API", level: 75 },
@@ -222,6 +234,8 @@ export const skills = [
   {
     category: "Software Engineering",
     items: [
+      { name: "React.js", level: 80 },
+      { name: "Node.js & Express.js", level: 75 },
       { name: "Java & Spring Boot", level: 75 },
       { name: "JavaScript", level: 80 },
       { name: "HTML / CSS", level: 85 },
